@@ -1,17 +1,31 @@
 # build-esnext
 [![Build Status](https://travis-ci.org/vinsonchuong/build-esnext.svg?branch=master)](https://travis-ci.org/vinsonchuong/build-esnext)
-[![Code Climate](https://codeclimate.com/github/vinsonchuong/build-esnext/badges/gpa.svg)](https://codeclimate.com/github/vinsonchuong/build-esnext)
 
-Prints Hello World!
+Compile and concatenate ES.next modules
 
 ## Installing
 `build-esnext` is available as an
 [npm package](https://www.npmjs.com/package/build-esnext).
 
 ## Usage
+Add `build-bin` and `build-esnext` to the `package.json` as follows:
+```json
+{
+  "name": "project",
+  "private": true,
+  "scripts": {
+    "build": "build"
+  },
+  "devDependencies": {
+    "build-bin": "^0.0.2",
+    "build-esnext": "^0.0.1"
+  }
+}
+```
+
 From the command line, run:
 ```bash
-build-esnext
+npm run build
 ```
 
 ## Development
