@@ -1,5 +1,6 @@
 {
   "name": "build-esnext",
+  "stage": "compile",
   "version": "0.0.1",
   "description": "Compile and concatenate ES.next modules",
   "keywords": [],
@@ -13,9 +14,6 @@
     "src"
   ],
   "main": "src/index.js",
-  "bin": {
-    "build-esnext": "src/bin/build-esnext.js"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/vinsonchuong/build-esnext"
@@ -25,11 +23,17 @@
     "test": "eslint && jasmine"
   },
   "dependencies": {
-    "node-promise-es6": "^0.3.2"
+    "rollup": "^0.34.3",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-commonjs": "^3.3.1",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-uglify": "^1.0.1"
   },
   "devDependencies": {
     "dist-es6": "^0.2.2",
     "jasmine-es6": "^0.2.1",
-    "eslint-defaults": "^0.3.1"
+    "eslint-defaults": "^0.3.1",
+    "directory-helpers": "^0.1.2"
   }
 }
