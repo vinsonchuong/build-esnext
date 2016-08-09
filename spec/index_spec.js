@@ -21,9 +21,10 @@ describe('build-esnext', () => {
   it('compiles ES.next modules', withProject(async (project) => {
     await project.write({
       'package.json': {
-        name: 'project'
+        name: 'project',
+        main: 'lib.js'
       },
-      'src/index.js': `
+      'lib.js': `
         async function sleep(ms) {
           await new Promise((resolve) => {
             setTimeout(resolve, ms);
@@ -46,7 +47,6 @@ describe('build-esnext', () => {
         await buildEsnext();
         require('./dist/dist.js');
       });
-
     `);
 
     expect(output).toBe('Hello World!');
