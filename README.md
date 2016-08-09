@@ -8,10 +8,13 @@ Compile and concatenate ES.next modules
 [npm package](https://www.npmjs.com/package/build-esnext).
 
 ## Usage
-Add `build-bin` and `build-esnext` to the `package.json` as follows:
+Add `build-bin` and `build-esnext` to the `package.json`. Also, specify a `main`
+to be used as the entry point.
+
 ```json
 {
   "name": "project",
+  "main": "src/index.js",
   "private": true,
   "scripts": {
     "build": "build"
