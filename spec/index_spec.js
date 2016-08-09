@@ -18,7 +18,7 @@ describe('build-esnext', () => {
     expect(stage).toBe('compile');
   });
 
-  xit('compiles ES.next modules', withProject(async (project) => {
+  it('compiles ES.next modules', withProject(async (project) => {
     await project.write({
       'package.json': {
         name: 'project'
@@ -39,9 +39,16 @@ describe('build-esnext', () => {
       `
     });
 
-    await project.execJs(`
-      import * as path from 'path';
-      require(path.resolve('../src/index.js')).default();
+    const output = await project.execJs(`
+      import { run } from 'esnext-async';
+      import buildEsnext from '../src';
+      run(async () => {
+        await buildEsnext();
+        require('./dist/dist.js');
+      });
+
     `);
+
+    expect(output).toBe('Hello World!');
   }));
 });
