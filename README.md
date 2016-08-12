@@ -18,8 +18,8 @@ Add `build-bin` and `build-esnext` to the `package.json`.
     "build": "build"
   },
   "devDependencies": {
-    "build-bin": "^0.0.2",
-    "build-esnext": "^0.0.1"
+    "build-bin": "^0.0.6",
+    "build-esnext": "^0.0.2"
   }
 }
 ```
