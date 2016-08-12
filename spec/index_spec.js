@@ -21,10 +21,9 @@ describe('build-esnext', () => {
   it('compiles ES.next modules', withProject(async (project) => {
     await project.write({
       'package.json': {
-        name: 'project',
-        main: 'lib.js'
+        name: 'project'
       },
-      'lib.js': `
+      'src/index.js': `
         async function sleep(ms) {
           await new Promise((resolve) => {
             setTimeout(resolve, ms);

@@ -8,13 +8,11 @@ Compile and concatenate ES.next modules
 [npm package](https://www.npmjs.com/package/build-esnext).
 
 ## Usage
-Add `build-bin` and `build-esnext` to the `package.json`. Also, specify a `main`
-to be used as the entry point.
+Add `build-bin` and `build-esnext` to the `package.json`.
 
 ```json
 {
   "name": "project",
-  "main": "src/index.js",
   "private": true,
   "scripts": {
     "build": "build"
@@ -30,6 +28,9 @@ From the command line, run:
 ```bash
 npm run build
 ```
+
+`build-esnext` assumes an entry point at `src/index.js` and will compile it and
+its dependencies into `dist/dist.js`.
 
 ## Development
 ### Getting Started

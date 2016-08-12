@@ -1,4 +1,3 @@
-import Directory from 'directory-helpers';
 import {rollup} from 'rollup';
 
 import nodeResolve from 'rollup-plugin-node-resolve';
@@ -7,13 +6,9 @@ import replace from 'rollup-plugin-replace';
 import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
 
-const directory = new Directory('.');
-
 export default async function() {
-  const {main = 'index.js'} = await directory.read('package.json');
-
   const bundle = await rollup({
-    entry: main,
+    entry: 'src/index.js',
     plugins: [
       nodeResolve({
         browser: true
