@@ -18,11 +18,8 @@ describe('build-esnext', () => {
     expect(stage).toBe('compile');
   });
 
-  it('compiles ES.next modules', withProject(async (project) => {
+  it('compiles an ES.next module at src/index.js', withProject(async (project) => {
     await project.write({
-      'package.json': {
-        name: 'project'
-      },
       'src/index.js': `
         async function sleep(ms) {
           await new Promise((resolve) => {
