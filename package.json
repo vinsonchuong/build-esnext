@@ -36,9 +36,10 @@
   },
   "devDependencies": {
     "dist-es6": "^0.2.3",
-    "jasmine-es6": "^0.2.1",
+    "jasmine-es6": "^0.3.0",
     "eslint-defaults": "^0.3.1",
     "directory-helpers": "^0.1.2",
+    "test-inject": "^0.0.3",
     "esnext-async": "^0.0.6"
   }
 }

@@ -1,15 +1,12 @@
+import register from 'test-inject';
 import Directory from 'directory-helpers';
 
-function withProject(test) {
-  return async () => {
-    const project = new Directory('project');
-    try {
-      await test(project);
-    } finally {
-      await project.remove();
-    }
-  };
-}
+const inject = register({
+  project: {
+    setUp: () => new Directory('project'),
+    tearDown: async (project) => await project.remove()
+  }
+});
 
 describe('build-esnext', () => {
   it('acts during the compile stage', async () => {
@@ -18,7 +15,7 @@ describe('build-esnext', () => {
     expect(stage).toBe('compile');
   });
 
-  it('compiles an ES.next module at src/index.js', withProject(async (project) => {
+  it('compiles an ES.next module at src/index.js', inject(async ({project}) => {
     await project.write({
       'src/index.js': `
         async function sleep(ms) {
