@@ -30,7 +30,7 @@ npm run build
 ```
 
 `build-esnext` assumes an entry point at `src/index.js` and will compile it and
-its dependencies into `dist/dist.js`.
+its dependencies into `dist/index.js`.
 
 ## Development
 ### Getting Started

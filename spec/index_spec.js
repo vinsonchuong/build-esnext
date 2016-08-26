@@ -15,7 +15,7 @@ describe('build-esnext', () => {
     expect(stage).toBe('compile');
   });
 
-  it('compiles an ES.next module at src/index.js', inject(async ({project}) => {
+  it('compiles an ES.next module at src/index.js to dist/index.js', inject(async ({project}) => {
     await project.write({
       'src/index.js': `
         async function sleep(ms) {
@@ -38,7 +38,7 @@ describe('build-esnext', () => {
       import buildEsnext from '../src';
       run(async () => {
         await buildEsnext();
-        require('./dist/dist.js');
+        require('./dist/index.js');
       });
     `);
 

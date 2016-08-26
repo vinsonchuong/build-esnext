@@ -34,6 +34,6 @@ export default async function() {
 
   await bundle.write({
     format: 'iife',
-    dest: 'dist/dist.js'
+    dest: 'dist/index.js'
   });
 }
