@@ -1,7 +1,7 @@
 {
   "name": "build-esnext",
   "stage": "compile",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Compile and concatenate ES.next modules",
   "keywords": [],
   "homepage": "https://github.com/vinsonchuong/build-esnext",
